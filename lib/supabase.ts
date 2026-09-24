@@ -1,11 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co";
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://weteswpmckiboraqdupb.supabase.co";
 const supabaseAnonKey =
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder-anon-key";
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  "sb_publishable_l_VYyHKzmvDuyIXb7kdEPw_loQCjKkF";
 const supabaseServiceKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY || supabaseAnonKey;
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||
+  "sb_secret_vrw3qsTTPgkdgJMNcgI2kQ_D6pFbLiQ";
 
 // Cliente público para operaciones cliente o públicas
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
