@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Camila Morales",
+    "role": "Master Colorista & Estilista",
+    "phone": "+591 70011223",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=faces",
+    "active": 1,
+    "services": [
+      1,
+      5
+    ],
+    "email": "camila@salon.com"
+  },
+  {
+    "id": 2,
+    "name": "Laura Fernández",
+    "role": "Especialista en Maquillaje & Uñas",
+    "phone": "+591 70044556",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=faces",
+    "active": 1,
+    "services": [
+      7,
+      5
+    ],
+    "email": "laura@salon.com"
+  }
+]
