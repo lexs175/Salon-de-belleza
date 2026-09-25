@@ -6,8 +6,7 @@ const supabaseAnonKey =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
   "sb_publishable_l_VYyHKzmvDuyIXb7kdEPw_loQCjKkF";
 const supabaseServiceKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  "sb_secret_vrw3qsTTPgkdgJMNcgI2kQ_D6pFbLiQ";
+  process.env.SUPABASE_SERVICE_ROLE_KEY || supabaseAnonKey;
 
 // Cliente público para operaciones cliente o públicas
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);

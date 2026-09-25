@@ -37,9 +37,13 @@ export default function ServicesAdmin({ currency }: { currency: string }) {
 
   const load = async () => {
     setLoading(true);
-    const res = await fetch("/api/admin/services");
-    const data = (await res.json()) as { services: Service[] };
-    setServices(data.services);
+    try {
+      const res = await fetch("/api/admin/services");
+      const data = (await res.json()) as { services?: Service[] };
+      if (data && Array.isArray(data.services)) {
+        setServices(data.services);
+      }
+    } catch {}
     setLoading(false);
   };
 
@@ -47,8 +51,13 @@ export default function ServicesAdmin({ currency }: { currency: string }) {
     let active = true;
     fetch("/api/admin/services")
       .then((r) => r.json())
-      .then((data: { services: Service[] }) => {
-        if (active) setServices(data.services);
+      .then((data: { services?: Service[] }) => {
+        if (active && data && Array.isArray(data.services)) {
+          setServices(data.services);
+        }
+      })
+      .catch(() => {
+        if (active) setServices([]);
       })
       .finally(() => {
         if (active) setLoading(false);
@@ -192,6 +201,18 @@ export default function ServicesAdmin({ currency }: { currency: string }) {
       {loading ? (
         <div className="flex justify-center py-12">
           <Loader2 className="animate-spin text-rose-700" />
+        </div>
+      ) : services.length === 0 ? (
+        <div className="bg-white rounded-[4px] border border-dashed border-stone-300 p-12 text-center">
+          <p className="text-sm font-medium text-stone-700">No hay servicios registrados todavía</p>
+          <p className="text-xs text-stone-400 mt-1 mb-4">Crea tu primer servicio para empezar a recibir reservas.</p>
+          <button
+            onClick={() => setForm({ ...EMPTY })}
+            className="inline-flex items-center gap-1.5 bg-brand hover:bg-rose-700 text-ink text-xs font-semibold px-4 py-2.5 rounded-[4px] transition-colors"
+          >
+            <Plus size={14} />
+            Crear primer servicio
+          </button>
         </div>
       ) : (
         <div className="space-y-3">

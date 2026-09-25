@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Corte de cabello",
+    "description": "Corte y peinado a tu medida",
+    "duration_minutes": 45,
+    "price": 250,
+    "active": 1,
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Color / Tinte",
+    "description": "Coloración completa con productos profesionales",
+    "duration_minutes": 120,
+    "price": 800,
+    "active": 1,
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Manicure",
+    "description": "Limpieza, limado y esmaltado",
+    "duration_minutes": 60,
+    "price": 350,
+    "active": 1,
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Pedicure",
+    "description": "Cuidado completo de pies",
+    "duration_minutes": 60,
+    "price": 350,
+    "active": 1,
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Maquillaje",
+    "description": "Maquillaje profesional para cualquier ocasión",
+    "duration_minutes": 60,
+    "price": 500,
+    "active": 1,
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "Alisado / Keratina",
+    "description": "Tratamiento de keratina para un cabello liso y sano",
+    "duration_minutes": 180,
+    "price": 1500,
+    "active": 1,
+    "image": ""
+  }
+]

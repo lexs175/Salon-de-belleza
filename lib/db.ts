@@ -74,7 +74,16 @@ export async function getAdminPassword(): Promise<string> {
   return data.admin_password;
 }
 
+const SERVICES_FILE = path.join(process.cwd(), "data", "services.json");
+
 function getLocalServices(activeOnly = false): Service[] {
+  try {
+    if (fs.existsSync(SERVICES_FILE)) {
+      const items: Service[] = JSON.parse(fs.readFileSync(SERVICES_FILE, "utf8"));
+      return activeOnly ? items.filter((s) => s.active) : items;
+    }
+  } catch {}
+
   try {
     const Database = require("better-sqlite3");
     const dbPath = path.join(process.cwd(), "data", "salon.db");
